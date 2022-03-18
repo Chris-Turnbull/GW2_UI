@@ -93,6 +93,11 @@ local function castBar_OnEvent(self, event, unitID, ...)
                 self.bar:SetTexCoord(0, p, 0.25, 0.5)
 
                 local lagWorld = select(4, GetNetStats()) / 1000
+                
+                -- This tweaks shows the spell queue window time in the cast bar instead of your lag,
+                -- if the queue window is greater
+                lagWorld = math.max(lagWorld, 1 * GetCVar("SpellQueueWindow") / 1000)
+                
                 local sqw = GetSetting("PLAYER_CASTBAR_SHOW_SPELL_QUEUEWINDOW") and GetCVar("SpellQueueWindow") / 1000 or 0
                 self.latency:SetWidth(math.max(0.0001, math.min(1, ((sqw + lagWorld) / (self.endTime - self.startTime)))) * 176)
             end,
