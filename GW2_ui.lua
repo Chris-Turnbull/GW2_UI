@@ -565,8 +565,8 @@ local function loadAddon(self)
         if GetSetting("BAGS_ENABLED") then
             GW.LoadInventory()
         else
-            -- if not our bags, we need to cut the bagbar frame out of the micromenu
-            GW.LoadDefaultBagBar()
+            --GW2 UI causes glitches with dominos, commenting out this line is a workaround to fix this.
+            --GW.LoadDefaultBagBar()
         end
     end
 
@@ -657,8 +657,8 @@ local function loadAddon(self)
     if GetSetting("CHATBUBBLES_ENABLED") then
         GW.LoadChatBubbles()
     end
-    -- create new microbuttons
-    GW.LoadMicroMenu()
+    ----GW2 UI causes glitches with dominos, commenting out this line is a workaround to fix this.
+    --GW.LoadMicroMenu()
     GW.LoadOrderBar()
 
     if GetSetting("PARTY_FRAMES") then
