@@ -785,8 +785,8 @@ local function evPlayerLogin(self)
         GW.LoadChatBubbles()
     end
     -- create new microbuttons
-    GW.LoadMicroMenu()
-    GW.LoadOrderBar()
+    --GW.LoadMicroMenu()
+    --GW.LoadOrderBar()
 
     if GetSetting("PARTY_FRAMES") then
         GW.LoadPartyFrames()
