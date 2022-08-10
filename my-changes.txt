@@ -1,0 +1,21 @@
+Firstly, I'm using Dominos, and I find that there are a few random elements from GW2_UI just randomly
+floating at the bottom of the screen, even though they're supposed to be turned off.
+
+My work-around to fix this is to edit GW2_ui.lua, and comment out these two lines:
+
+	GW.LoadMicroMenu()
+	GW.LoadDefaultBagBar()
+ 
+
+Second problem, I'm using OiLvl, and I find that its text has this white outline added around it.
+
+Again I have a work-around to fix this. In core/fonts.lua, I comment out the following line:
+
+	setFont(NumberFontNormal, narrow, 12, "", 1.25, -1.25, 1)
+
+
+Finally added
+
+	lagWorld = math.max(lagWorld, 1 * GetCVar("SpellQueueWindow") / 1000)
+
+in mainbar/castingbar.lua to show the spell queue window in the cast bars, not just the lag
